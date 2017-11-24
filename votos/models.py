@@ -24,17 +24,19 @@ class Distrito(models.Model):
 
 class Candidato(models.Model):
     """
-    #TODO Completar segun consideraciones del desarrollador
-    En este comentario escribir por que se decide modelar de esta
-    forma la clase
+    Se decide utilizar este modelo para la clase candidato porque es necesario el nombre 
+    y de q distrito pertenece dicho candidato
     """
-    pass
+    
+    nombre=models.CharField("Nombre del candidato",max_length=30)
+    distrito=models.ForeignKey(Distrito)
+
 
 
 class Votos(models.Model):
     """
-    #TODO Completar segun consideraciones del desarrollador
-    En este comentario escribir por que se decide modelar de esta
-    forma la clase
+    Se decide utilizar este modelo para la clase votos porque es necesario
+    saber a que candidato se le va a atribuir dicho voto
     """
-    pass
+
+    candidato=models.ForeignKey(Candidato)
